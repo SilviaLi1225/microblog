@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.permission_list1() }}
+            {{ form.permission_list1.label }}<br>
+            {{ form.permission_list2() }}
+            {{ form.permission_list2.label }}<br>
+            {{ form.permission_list3() }}
+            {{ form.permission_list3.label }}<br>
+        </p>
+        <p>{{ form.submit()}}</p>
+    </form>
+
+{% endblock %}
