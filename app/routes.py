@@ -37,12 +37,12 @@ def login():
                             {permission_list1[2].get(form.permission_list3.label): form.permission_list3.data}]
 
         company_id = request.args.get('companyID', type=str, default=None)
-
+        versionId = "001"
         print(request.url)
         print("companyID", company_id)
         data = {"type": 0,
                 "userID": form.username.data,
-                "commonID": str(company_id),
+                "commonID": str(company_id)+versionId,
                 "boolean": permission_list,
                 "timestamp": time.time(),
                 }
